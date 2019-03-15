@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
 const PORT=3000;
+const request = require('request');
 
-app.get("/books/", (req,res) => {
-    res.send("sending books");
+app.get("/books/:parameter", (req,res) => {
+    var parameter = req.params.parameter;
+    request('https://www.googleapis.com/books/v1/volumes?q='+parameter, { json: true }, (err, res, body) => {
+    if (err) { return console.log(err); }
+    var items = body.items;
+    console.log(items);
+    });
+    res.send("sending books " + parameter);
     console.log("sending books");
 });
 
