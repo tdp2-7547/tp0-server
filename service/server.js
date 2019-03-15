@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT=3000;
 const request = require('request');
-const DTOBookHeader = require('./DTOBookHeader');
+const DTOBookHeader = require('../DTOBookHeader');
 const MAX_ITEMS = 10;
 
 app.get("/books/:parameter/:pageNumber", (req,res) => {
@@ -22,7 +22,7 @@ app.get("/books/:parameter/:pageNumber", (req,res) => {
             dtoBooksHeader.push(dtoBookHeader);
         }
         console.log(dtoBooksHeader);
-        res.send(dtoBooksHeader);
+        res.status(200).send(dtoBooksHeader);
     });
     console.log("sending books");
 });
@@ -35,3 +35,5 @@ process.on('uncaughtException', (err) => {
     console.log("========Uncaught exception========");
     console.log(err);
 });
+
+module.exports = app;
