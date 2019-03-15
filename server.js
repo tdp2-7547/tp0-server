@@ -3,11 +3,13 @@ const app = express();
 const PORT=3000;
 const request = require('request');
 const DTOBookHeader = require('./DTOBookHeader');
+const MAX_ITEMS = 10;
 
-app.get("/books/:parameter", (req,res) => {
+app.get("/books/:parameter/:pageNumber", (req,res) => {
     var parameter = req.params.parameter;
+    var pageNumber = req.params.pageNumber;
     var dtoBooksHeader = [];
-    request('https://www.googleapis.com/books/v1/volumes?q='+parameter, { json: true }, (err, response, body) => {
+    request('https://www.googleapis.com/books/v1/volumes?q='+parameter+'&startIndex='+pageNumber*MAX_ITEMS+'&orderBy=relevance', { json: true }, (err, response, body) => {
         if (err) { return console.log(err); }
         var items = JSON.parse(JSON.stringify(body.items));
         for (var i = 0; i < items.length; i++) {

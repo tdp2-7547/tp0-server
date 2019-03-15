@@ -1,0 +1,30 @@
+{
+  "name": "tp0-server",
+  "version": "1.0.0",
+  "description": "Repo para gestionar aplicacion servidor TP0",
+  "main": "server.js",
+  "dependencies": {
+    "connect-timeout": "^1.9.0",
+    "dateformat": "^3.0.3",
+    "express": "^4.16.4",
+    "request": "^2.81.0",
+    "system-sleep": "^1.3.6",
+    "nodemon": "1.18.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "nodemon -L app/bin/www",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdp2-7547/tp0-server.git"
+  },
+  "author": "hernan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdp2-7547/tp0-server/issues"
+  },
+  "homepage": "https://github.com/tdp2-7547/tp0-server#readme"
+}
