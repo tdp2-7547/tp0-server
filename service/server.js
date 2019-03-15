@@ -5,6 +5,12 @@ const request = require('request');
 const DTOBookHeader = require('../DTOBookHeader');
 const MAX_ITEMS = 10;
 
+
+
+console.log(process.env.NODE_ENV);
+
+
+
 app.get("/books/:parameter/:pageNumber", (req,res) => {
     var parameter = req.params.parameter;
     var pageNumber = req.params.pageNumber;
