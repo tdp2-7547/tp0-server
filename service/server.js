@@ -6,7 +6,7 @@ var morgan = require('morgan');
 
 
 if (process.env.NODE_ENV !== 'test'){
-    app.use(morgan('combined', { stream: logger.stream }))
+    app.use(morgan("default"));
 }
 
 app.use('/books',bookService);

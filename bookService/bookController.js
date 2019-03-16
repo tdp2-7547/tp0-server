@@ -16,9 +16,6 @@ function getBooksMatched(req, res, next){
         res.status(400).send("error");
     }
 
-    console.log("################");
-    console.log(process.env.NODE_ENV);
-
     if (process.env.NODE_ENV == 'test'){
         //to do mock...
         var mock = [];
@@ -32,7 +29,6 @@ function getBooksMatched(req, res, next){
             },
             function(response){
                 res.status(200).send(response);
-                console.log(response)
             }
         )
     }

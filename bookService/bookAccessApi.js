@@ -11,6 +11,8 @@ function getBooksMatched(parameter,pageNumber){
             if (error) { reject(error) }
 
             var items = JSON.parse(JSON.stringify(body.items));
+            console.log("############");
+            console.log(items);
             for (var i = 0; i < items.length; i++) {
                 var dtoBookHeader = new DTOBookHeader();
                 dtoBookHeader.title = (items[i].volumeInfo.title === undefined) ? "" : items[i].volumeInfo.title;
