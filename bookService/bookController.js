@@ -20,7 +20,7 @@ function getBooksMatched(req, res, next){
         //to do mock...
         var mock = [];
         for(i=0;i<3;i++){mock.push(new DTOBookHeader())}
-        res.status(200).send(mock);
+        res.status(200).send(JSON.stringify(mock));
     }else{
         bookAccessApi.getBooksMatched(parameter,pageNumber)
         .then(
