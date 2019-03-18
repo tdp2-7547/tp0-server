@@ -29,7 +29,7 @@ function getBooksMatched(parameter,pageNumber){
                 dtoBookHeader.isAvailableFreeEpub = Boolean(linkDownloadEpub);
                 dtoBookHeader.linkDownloadPDF = linkDownloadPDF;
                 dtoBookHeader.linkDownloadEpub = linkDownloadEpub;
-                if(dtoBookHeader.isAvailableFreeEpub || dtoBookHeader.isAvailableFreePDF)
+//                if(dtoBookHeader.isAvailableFreeEpub || dtoBookHeader.isAvailableFreePDF)
                 dtoBooksHeader.push(dtoBookHeader);
                 //console.log(dtoBookHeader);
             }
