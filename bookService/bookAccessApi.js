@@ -22,7 +22,7 @@ function getBooksMatched(parameter,pageNumber){
                 dtoBookHeader.description = (items[i].volumeInfo.description === undefined) ? "" : items[i].volumeInfo.description;
                 dtoBookHeader.authores = (items[i].volumeInfo.authors === undefined) ? "" : items[i].volumeInfo.authors;
                 dtoBookHeader.categories = (items[i].volumeInfo.categories === undefined) ? "" : items[i].volumeInfo.categories;
-                dtoBookHeader.linksImage = (items[i].volumeInfo.imageLinks === undefined) ? "" : items[i].volumeInfo.imageLinks;
+                dtoBookHeader.linkImage = (items[i].volumeInfo.imageLinks.smallThumbnail === undefined) ? "" : items[i].volumeInfo.imageLinks.smallThumbnail;
                 linkDownloadPDF = (items[i].accessInfo.pdf.downloadLink === undefined) ? "" : items[i].accessInfo.pdf.downloadLink;
                 linkDownloadEpub = (items[i].accessInfo.epub.downloadLink === undefined) ? "" : items[i].accessInfo.epub.downloadLink;
                 dtoBookHeader.isAvailableFreePDF = Boolean(linkDownloadPDF);

@@ -8,6 +8,6 @@ function DTOBookHeader() {
     this.isAvailableFreeEpub = '';
     this.linkDownloadPDF= "",
     this.linkDownloadEpub= "",
-    this.linksImage = [];
+    this.linkImage = "";
 }
 module.exports = DTOBookHeader;
